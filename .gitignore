@@ -1,32 +1,14 @@
-# Prerequisites
-*.d
+credentials.json
+CMakeCache.txt
+CMakeFiles/
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+.DS_Store
+build/*
+dev/*
+doc/build/*
 
-# Precompiled Headers
-*.gch
-*.pch
+test/data/*
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+*.vcxproj
+*.vcxproj.filters
+*.sln

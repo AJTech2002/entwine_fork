@@ -1,0 +1,53 @@
+/******************************************************************************
+* Copyright (c) 2016, Connor Manning (connor@hobu.co)
+*
+* Entwine -- Point cloud indexing
+*
+* Entwine is available under the terms of the LGPL2 license. See COPYING
+* for specific license text and more information.
+*
+******************************************************************************/
+
+#pragma once
+
+#include <functional>
+#include <string>
+#include <vector>
+
+#include <pdal/Dimension.hpp>
+
+#include <entwine/types/bounds.hpp>
+#include <entwine/types/version.hpp>
+
+#define ENTWINE_VERSION_STRING "@ENTWINE_VERSION_STRING@"
+
+namespace pdal { class PointView; }
+
+namespace entwine
+{
+
+inline Version currentEntwineVersion()
+{
+    return Version(ENTWINE_VERSION_STRING);
+}
+
+inline Version currentEptVersion()
+{
+    return Version("1.0.0");
+}
+
+using Origin = uint64_t;
+using OriginList = std::vector<Origin>;
+static constexpr Origin invalidOrigin = std::numeric_limits<Origin>::max();
+
+using Paths = std::vector<std::string>;
+
+using DimId = pdal::Dimension::Id;
+using DimType = pdal::Dimension::Type;
+
+// Enough to resolve contain a dataset the size of the earth at picometer
+// resolution.
+static constexpr uint64_t maxDepth = 64;
+
+} // namespace entwine
+
